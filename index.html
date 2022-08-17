@@ -236,7 +236,7 @@ permissions and limitations under the License.
     }
 
     function isthisdocument(bucket, key) {
-        return key === "index.html";
+        return key === "index.html" || key == "element.html";
     }
 
     function isfolder(path) {
@@ -416,7 +416,7 @@ permissions and limitations under the License.
                     if (HIDE_INDEX) {
                         console.log("Filter: remove index.html");
                         data.Contents = data.Contents.filter(function(el) {
-                            return el.Key !== "index.html";
+                            return el.Key !== "index.html" && el.Key !== "element.html";
                         });
                     }
 
